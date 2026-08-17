@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Sign Up</title>
 
     <style>
         * {
@@ -25,13 +25,15 @@
                 #667eea,
                 #764ba2
             );
+
+            padding: 30px;
         }
 
-        .login-box {
-            width: 400px;
+        .signup-box {
+            width: 420px;
             padding: 40px;
 
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.96);
             border-radius: 20px;
 
             box-shadow:
@@ -53,15 +55,14 @@
             margin-bottom: 30px;
         }
 
-        form label {
+        label {
             display: block;
             color: #2d3748;
             font-weight: bold;
             margin-bottom: 8px;
         }
 
-        input[type="email"],
-        input[type="password"] {
+        input {
             width: 100%;
             padding: 14px;
 
@@ -69,13 +70,12 @@
             border-radius: 10px;
 
             font-size: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
 
             transition: 0.3s;
         }
 
-        input[type="email"]:focus,
-        input[type="password"]:focus {
+        input:focus {
             outline: none;
             border-color: #667eea;
 
@@ -83,35 +83,26 @@
                 0 0 0 3px rgba(102, 126, 234, 0.15);
         }
 
-        .options {
+        .terms {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 8px;
 
-            margin-bottom: 25px;
+            margin: 5px 0 22px;
+
             font-size: 14px;
+            color: #718096;
         }
 
-        .remember {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .remember label {
+        .terms input {
+            width: auto;
             margin: 0;
-            font-weight: normal;
-            color: #555;
         }
 
-        .options a {
+        .terms a {
             color: #667eea;
             text-decoration: none;
             font-weight: bold;
-        }
-
-        .options a:hover {
-            color: #764ba2;
         }
 
         button {
@@ -132,7 +123,6 @@
             font-weight: bold;
 
             cursor: pointer;
-
             transition: 0.3s;
         }
 
@@ -143,7 +133,7 @@
                 0 8px 20px rgba(102, 126, 234, 0.4);
         }
 
-        .signup {
+        .signin {
             text-align: center;
             margin-top: 25px;
 
@@ -151,13 +141,13 @@
             font-size: 14px;
         }
 
-        .signup a {
+        .signin a {
             color: #667eea;
             text-decoration: none;
             font-weight: bold;
         }
 
-        .signup a:hover {
+        .signin a:hover {
             color: #764ba2;
         }
     </style>
@@ -165,15 +155,22 @@
 
 <body>
 
-    <div class="login-box">
+    <div class="signup-box">
 
-        <h1>Welcome Back</h1>
+        <h1>Create Account</h1>
 
         <p class="subtitle">
-            Sign in to your account
+            Sign up to get started
         </p>
 
         <form>
+
+            <label>Full Name</label>
+            <input
+                type="text"
+                placeholder="Enter your full name"
+                required
+            >
 
             <label>Email</label>
             <input
@@ -185,30 +182,35 @@
             <label>Password</label>
             <input
                 type="password"
-                placeholder="Enter your password"
+                placeholder="Create a password"
                 required
             >
 
-            <div class="options">
- 
-                <div class="remember">
-                    <input type="checkbox">
-                    <label>Remember me</label>
-                </div>
+            <label>Confirm Password</label>
+            <input
+                type="password"
+                placeholder="Confirm your password"
+                required
+            >
 
-                <a href="#">Forgot Password?</a>
+            <div class="terms">
+                <input type="checkbox" required>
 
+                <span>
+                    I agree to the
+                    <a href="#">Terms & Conditions</a>
+                </span>
             </div>
 
             <button type="submit">
-                Sign In
+                Sign Up
             </button>
 
         </form>
 
-        <p class="signup">
-            Don't have an account?
-            <a href="#">Sign Up</a>
+        <p class="signin">
+            Already have an account?
+            <a href="index.html">Sign In</a>
         </p>
 
     </div>
